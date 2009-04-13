@@ -1,0 +1,19 @@
+﻿Chương trình được viết theo nhóm (5 người của nhóm viết chung)
+
+Yêu cầu:
+
+1. Quản lý thư viện bao gồm: sách, phân loại sách, tác giả sách, người mượn sách, việc mượn sách (ai mượn sách gì, từ ngày nào đến ngày nào...), tìm kiếm sách theo loại, tên sách, tác giả, người mượn.
+
+2. Chương trình bao gồm đầy đủ Project Plan, Requirements, Use Case, Source Code, Database, Build Script, Test Case, Release.
+
+3. Sử dụng http://code.google.com/hosting/ để lưu trữ, chia sẽ toàn bộ tài nguyên của dự án.
+
+Cần nộp:
+
+1. File Excel gồm tên, MSSV những người tham gia làm dự án.
+
+2. Version cuối cùng của dự án lấy từ http://code.google.com/hosting/ về.
+
+Tất cả zip lại thành 1 file đặt tên: STTNhóm.zip. Trưởng nhóm nộp tại link:
+
+http://courses.cs.hcmus.edu.vn/mod/assignment/view.php?id=20306
