@@ -21,7 +21,7 @@ namespace DTO
         public String TenLoaiSach
         {
             set { tenLoaiSach = value; }
-            get { return mLoaiSach; }
+            get { return tenLoaiSach; }
         }
         #endregion
 
