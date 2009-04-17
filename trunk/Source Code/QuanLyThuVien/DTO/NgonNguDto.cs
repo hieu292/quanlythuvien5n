@@ -12,7 +12,16 @@ namespace DTO
         #endregion
 
         #region Properties
-
+        public int MaNgonNgu
+        {
+            get { return mNgonNgu; }
+            set { mNgonNgu = value; }
+        }
+        public String TenNgonNgu
+        {
+            get { return tenNgonNgu; }
+            set { tenNgonNgu = value; }
+        }
         #endregion
 
         #region Methods
