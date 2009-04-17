@@ -7,9 +7,10 @@ namespace DTO
     public class ChiTietPhieuMuonDto
     {
         #region Atributes
+        private int mChiTietPhieu;
         private int mPhieu;
         private int mSach;
-        private DateTime ngayTra;
+        
         #endregion
 
         #region Properties
@@ -25,10 +26,10 @@ namespace DTO
             set { mSach = value; }
         }
 
-        public DateTime NgayTra
+        public int MaChiTietPhieu
         {
-            get { return ngayTra; }
-            set { ngayTra = value; }
+            get { return mChiTietPhieu; }
+            set { mChiTietPhieu = value; }
         }
         #endregion
 
