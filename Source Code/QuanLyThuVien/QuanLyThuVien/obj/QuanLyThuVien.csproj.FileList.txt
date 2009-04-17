@@ -1,0 +1,11 @@
+bin\Debug\QuanLyThuVien.exe
+bin\Debug\QuanLyThuVien.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\QuanLyThuVien.Properties.Resources.resources
+obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
+obj\Debug\QuanLyThuVien.exe
+obj\Debug\QuanLyThuVien.pdb
+bin\Debug\BUS.dll
+bin\Debug\DTO.dll
+bin\Debug\BUS.pdb
+bin\Debug\DTO.pdb
