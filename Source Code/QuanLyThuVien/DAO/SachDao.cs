@@ -6,5 +6,6 @@ namespace DAO
 {
     public class SachDao
     {
+
     }
 }

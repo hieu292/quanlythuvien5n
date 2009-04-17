@@ -15,7 +15,12 @@ namespace DTO
 
         public int MLoaiSach
         {
-            set { values = mLoaiSach; }
+            set { mLoaiSach = value; }
+            get { return mLoaiSach; }
+        }
+        public String TenLoaiSach
+        {
+            set { tenLoaiSach = value; }
             get { return mLoaiSach; }
         }
         #endregion
