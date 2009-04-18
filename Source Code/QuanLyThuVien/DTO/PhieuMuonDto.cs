@@ -14,13 +14,13 @@ namespace DTO
         #endregion
 
         #region Properties
-        public int MaPhieu
+        public int MPhieu
         {
             get { return mPhieu; }
             set { mPhieu = value; }
         }
 
-        public int MaDocGia
+        public int MDocGia
         {
             get { return mDocGia; }
             set { mDocGia = value; }

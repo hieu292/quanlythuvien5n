@@ -9,3 +9,5 @@ bin\Debug\BUS.dll
 bin\Debug\DTO.dll
 bin\Debug\BUS.pdb
 bin\Debug\DTO.pdb
+bin\Debug\DAO.dll
+bin\Debug\DAO.pdb

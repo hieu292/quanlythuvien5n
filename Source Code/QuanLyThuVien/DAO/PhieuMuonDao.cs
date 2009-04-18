@@ -36,8 +36,8 @@ namespace DAO
             while (dr.Read())
             {
                 PhieuMuonDto pm = new PhieuMuonDto();
-                pm.MaPhieu = (int)dr["MPhieu"];
-                pm.MaDocGia = (int)dr["MDocGia"];
+                pm.MPhieu = (int)dr["MPhieu"];
+                pm.MDocGia = (int)dr["MDocGia"];
                 pm.NgayMuon = (DateTime)dr["NgayMuon"];
                 pm.SoNgayMuon = (int)dr["SoNgayMuon"];
                 ds.Add(pm);
@@ -62,8 +62,8 @@ namespace DAO
             while (dr.Read())
             {
                 pm = new PhieuMuonDto();
-                pm.MaPhieu = (int)dr["MPhieu"];
-                pm.MaDocGia = (int)dr["MDocGia"];
+                pm.MPhieu = (int)dr["MPhieu"];
+                pm.MDocGia = (int)dr["MDocGia"];
                 pm.NgayMuon = (DateTime)dr["NgayMuon"];
                 pm.SoNgayMuon = (int)dr["SoNgayMuon"];
             }
@@ -82,16 +82,16 @@ namespace DAO
             cmd.Parameters.Add("@MDocGia", OleDbType.Integer);
             cmd.Parameters.Add("@NgayMuon", OleDbType.Date);
             cmd.Parameters.Add("@SoNgayMuon", OleDbType.Integer);
-            cmd.Parameters["@MDocGia"].Value = pm.MaDocGia;
+            cmd.Parameters["@MDocGia"].Value = pm.MDocGia;
             cmd.Parameters["@NgayMuon"].Value = pm.NgayMuon;
             cmd.Parameters["@SoNgayMuon"].Value = pm.SoNgayMuon;
             
             cmd.ExecuteNonQuery();
             strSQL = "Select @@IDENTITY";
             cmd = new OleDbCommand(strSQL, cn);
-            pm.MaPhieu = (int)cmd.ExecuteScalar();
+            pm.MPhieu = (int)cmd.ExecuteScalar();
             cn.Close();
-            return pm.MaPhieu;
+            return pm.MPhieu;
         }
         public static void Delete(int MaPh)
         {
@@ -119,10 +119,10 @@ namespace DAO
             cmd.Parameters.Add("@SoNgayMuon", OleDbType.Integer);
             cmd.Parameters.Add("@MPhieu", OleDbType.Integer);
 
-            cmd.Parameters["@MDocGia"].Value = pm.MaDocGia;
+            cmd.Parameters["@MDocGia"].Value = pm.MDocGia;
             cmd.Parameters["@NgayMuon"].Value = pm.NgayMuon;
             cmd.Parameters["@SoNgayMuon"].Value = pm.SoNgayMuon;
-            cmd.Parameters["@MPhieu"].Value = pm.MaPhieu;
+            cmd.Parameters["@MPhieu"].Value = pm.MPhieu;
             cmd.ExecuteNonQuery();
             cn.Close();
         }

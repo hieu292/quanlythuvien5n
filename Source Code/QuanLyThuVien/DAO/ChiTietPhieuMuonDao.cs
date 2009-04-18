@@ -9,7 +9,8 @@ using DTO;
 namespace DAO
 {
     public class ChiTietPhieuMuonDao
-    {   public static DataTable GetTable()
+    {   
+        public static DataTable GetTable()
         {
             DataTable dt = new DataTable();
             OleDbConnection cn;

@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonBus.cs" />
+    <Compile Include="DataAccessBus.cs" />
     <Compile Include="DocGiaBus.cs" />
     <Compile Include="LoaiSachBus.cs" />
     <Compile Include="PhieuMuonBus.cs" />
