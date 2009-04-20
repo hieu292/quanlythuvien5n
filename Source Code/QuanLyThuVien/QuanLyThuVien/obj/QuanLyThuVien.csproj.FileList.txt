@@ -11,3 +11,12 @@ bin\Debug\BUS.pdb
 bin\Debug\DTO.pdb
 bin\Debug\DAO.dll
 bin\Debug\DAO.pdb
+obj\Debug\QuanLyThuVien.frmMain.resources
+obj\Debug\QuanLyThuVien.frmQuanlysach.resources
+obj\Debug\QuanLyThuVien.frmCapnhatLoaisachNgonngu.resources
+obj\Debug\QuanLyThuVien.frmQuanlyDocgia.resources
+obj\Debug\QuanLyThuVien.frmThemSuaSach.resources
+obj\Debug\QuanLyThuVien.frmQuanlydanhsachphieumuon.resources
+obj\Debug\QuanLyThuVien.frmThemDocgia.resources
+obj\Debug\QuanLyThuVien.frmLapPhieuMuonSach.resources
+obj\Debug\QuanLyThuVien.frmNhansach.resources
