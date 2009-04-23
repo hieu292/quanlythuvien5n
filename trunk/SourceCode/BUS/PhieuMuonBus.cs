@@ -23,6 +23,20 @@ namespace BUS
         {
             return PhieuMuonDao.Search(MaPh);
         }
+
+        public static DataSet SearchDay(DateTime first, DateTime last)
+        {
+            return PhieuMuonDao.SearchDay(first, last);
+        }
+
+        public static DataSet Searchnumday(int songay)
+        {
+            return PhieuMuonDao.Searchnumday(songay);
+        }
+        public static DataSet SearchLate()
+        {
+            return PhieuMuonDao.SearchLate();
+        }
         public static int Add(PhieuMuonDto pm)
         {
             return PhieuMuonDao.Add(pm);

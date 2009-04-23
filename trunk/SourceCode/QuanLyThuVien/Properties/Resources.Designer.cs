@@ -67,6 +67,13 @@ namespace QuanLyThuVien.Properties {
             }
         }
         
+        internal static System.Drawing.Icon Books_OPY {
+            get {
+                object obj = ResourceManager.GetObject("Books_OPY", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);

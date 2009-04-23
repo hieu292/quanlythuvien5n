@@ -11,7 +11,7 @@ namespace BUS
 {
     public class LoaiSachBus
     {
-        public static DataTable GetTable()
+        public static DataSet GetTable()
         {
             return LoaiSachDao.GetTable();
         }
@@ -35,5 +35,10 @@ namespace BUS
         {
             LoaiSachDao.Update(loaiSach);
         }
+        public static void CapNhatBang(DataSet danhmuc)
+        {
+            LoaiSachDao.CapNhatBang(danhmuc);
+        }
+
     }
 }
