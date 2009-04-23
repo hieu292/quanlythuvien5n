@@ -9,7 +9,7 @@ namespace DAO
     {
         public static OleDbConnection ConnectionData()
         {
-            string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source =QuanLythuvien .mdb";
+            string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source =Quanlythuvien.mdb";
             OleDbConnection cn = new OleDbConnection(cnStr);
             cn.Open();
             return cn;

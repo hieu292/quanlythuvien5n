@@ -42,47 +42,11 @@
     <Compile Include="frmCapnhatLoaisachNgonngu.Designer.cs">
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLapPhieuMuonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLapPhieuMuonSach.Designer.cs">
-      <DependentUpon>frmLapPhieuMuonSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmNhansach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNhansach.Designer.cs">
-      <DependentUpon>frmNhansach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQuanlydanhsachphieumuon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanlydanhsachphieumuon.Designer.cs">
-      <DependentUpon>frmQuanlydanhsachphieumuon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQuanlyDocgia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanlyDocgia.Designer.cs">
-      <DependentUpon>frmQuanlyDocgia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmQuanlysach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanlysach.Designer.cs">
       <DependentUpon>frmQuanlysach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemDocgia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemDocgia.Designer.cs">
-      <DependentUpon>frmThemDocgia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemSuaSach.cs">
       <SubType>Form</SubType>
@@ -96,33 +60,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLapPhieuMuonSach.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmLapPhieuMuonSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNhansach.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmNhansach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanlydanhsachphieumuon.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmQuanlydanhsachphieumuon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanlyDocgia.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmQuanlyDocgia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanlysach.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmQuanlysach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemDocgia.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmThemDocgia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSuaSach.resx">
       <SubType>Designer</SubType>
@@ -202,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Books-OPY.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

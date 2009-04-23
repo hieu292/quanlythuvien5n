@@ -10,7 +10,7 @@ namespace BUS
 {
     public class NgonNguBus
     {
-        public static DataTable GetTable()
+        public static DataSet GetTable()
         {
             return NgonNguDao.GetTable();
         }
@@ -33,6 +33,10 @@ namespace BUS
         public static void Update(NgonNguDto nn)
         {
             NgonNguDao.Update(nn);
+        }
+        public static void CapNhatBang(DataSet danhmuc)
+        {
+            NgonNguDao.CapNhatBang(danhmuc);
         }
     }
 }

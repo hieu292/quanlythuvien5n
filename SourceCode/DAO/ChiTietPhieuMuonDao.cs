@@ -71,6 +71,9 @@ namespace DAO
             cn.Close();
             return ctpm;
         }
+
+
+
         public static int Add(ChiTietPhieuMuonDto ctpm)
         {
            OleDbConnection cn;
@@ -121,6 +124,28 @@ namespace DAO
 
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public static int Count(int mPhieu)
+        {
+            int count = 0;
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "SELECT count(*) FROM ChiTietPhieuMuon AS c, Sach AS s WHERE s.MSach=c.MSach And s.TrangThai=False And MPhieu=?";
+            OleDbCommand cmd = new OleDbCommand(strSQL, cn);
+            cmd.Parameters.Add("@MPhieu", OleDbType.Integer);
+            cmd.Parameters["@MPhieu"].Value = mPhieu;
+            OleDbDataReader dr;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                count = (int)dr[0];
+            }
+
+            dr.Close();
+            cn.Close();
+            return count;
         }
         
     }

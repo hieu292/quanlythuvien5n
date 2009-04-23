@@ -35,5 +35,10 @@ namespace BUS
         {
             ChiTietPhieuMuonDao.Update(ctpm);
         }
+
+        public static int Count(int MPhieu)
+        {
+            return ChiTietPhieuMuonDao.Count(MPhieu);
+        }
     }
 }

@@ -10,9 +10,9 @@ namespace DAO
 {
     public class LoaiSachDao
     {
-        public static DataTable GetTable()
+        public static DataSet GetTable()
         {
-            DataTable dt = new DataTable();
+            DataSet dt = new DataSet();
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
@@ -114,6 +114,16 @@ namespace DAO
             cmd.Parameters["@TenLoaiSach"].Value = loaiSach.TenLoaiSach;
             
             cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+        public static void CapNhatBang(DataSet ds)
+        {
+            OleDbConnection cn = DataProvider.ConnectionData();
+            string strSQL = "Select * From LoaiSach";
+            OleDbDataAdapter da = new OleDbDataAdapter(strSQL, cn);
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+            da.Update(ds.Tables[0]);
+            //B5: Dong ket noi CSDL
             cn.Close();
         }
     }

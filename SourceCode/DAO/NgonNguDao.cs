@@ -10,18 +10,18 @@ namespace DAO
 {
     public class NgonNguDao
     {
-        public static DataTable GetTable()
+        public static DataSet GetTable()
         {
-            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
             strSQL = "Select * From NgonNgu";
             OleDbDataAdapter da;
             da = new OleDbDataAdapter(strSQL, cn);
-            da.Fill(dt);
+            da.Fill(ds);
             cn.Close();
-            return dt;
+            return ds;
         }
         public static IList GetList()
         {
@@ -112,6 +112,16 @@ namespace DAO
             cmd.Parameters["@MNgonNgu"].Value = nn.MaNgonNgu;
 
             cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+        public static void CapNhatBang(DataSet ds)
+        {
+            OleDbConnection cn = DataProvider.ConnectionData();
+            string strSQL = "Select * From NgonNgu";
+            OleDbDataAdapter da = new OleDbDataAdapter(strSQL, cn);
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+            da.Update(ds.Tables[0]);
+            //B5: Dong ket noi CSDL
             cn.Close();
         }
     }

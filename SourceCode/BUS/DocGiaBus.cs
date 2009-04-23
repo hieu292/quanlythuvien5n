@@ -23,6 +23,16 @@ namespace BUS
         {
             return DocGiaDao.Search(maDocGia);
         }
+        public static DataSet Search(DocGiaDto maDocGia)
+        {
+            return DocGiaDao.Search(maDocGia);
+        }
+
+        public static DataSet Timsach(int maDocGia)
+        {
+            return DocGiaDao.Timsach(maDocGia);
+        }
+
         public static int Add(DocGiaDto docGia)
         {
             return DocGiaDao.Add(docGia);
@@ -34,6 +44,10 @@ namespace BUS
         public static void Update(DocGiaDto docGia)
         {
             DocGiaDao.Update(docGia);
+        }
+        public static DocGiaDto TimDocgiaTheoPhieu(int mPhieu)
+        {
+            return DAO.DocGiaDao.TimDocgiaTheoPhieu(mPhieu);
         }
     }
 }

@@ -71,6 +71,49 @@ namespace DAO
             cn.Close();
             return pm;
         }
+
+        public static DataSet SearchDay(DateTime first, DateTime last)
+        {
+            DataSet ds = new DataSet();
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where NgayMuon >= #" + first.ToShortDateString() + "# and NgayMuon <= #" + last.ToShortDateString() + "# and d.MDocGia = p.MDocGia";
+            OleDbDataAdapter da;
+            da = new OleDbDataAdapter(strSQL, cn);
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public static DataSet Searchnumday(int soNgay)
+        {
+            DataSet ds = new DataSet();
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where SoNgayMuon = " + soNgay.ToString() + " and d.MDocGia = p.MDocGia";
+            OleDbDataAdapter da;
+            da = new OleDbDataAdapter(strSQL, cn);
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public static DataSet SearchLate()
+        {
+            DataSet ds = new DataSet();
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where d.MDocGia = p.MDocGia";
+            OleDbDataAdapter da;
+            da = new OleDbDataAdapter(strSQL, cn);
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
         public static int Add(PhieuMuonDto pm)
         {
             OleDbConnection cn;
