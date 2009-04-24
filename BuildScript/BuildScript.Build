@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<project name="Quan Li Thu Vien" default="run">
+    	
+	<property name="nant.onsuccess" value="ThanhCong"/>
+	<property name="nant.onfailure" value="ThatBai"/>
+	
+	<target name="GioiThieu">
+		<echo message="Building project :${project::get-name()}"/>
+		<echo message="Cac thanh vien :"/>
+		<echo message="		Ngo Minh Nhut"/>
+		<echo message="		VO Quang Nhat"/>
+		<echo message="		Nguyen tan Ngoc"/>
+		<echo message="		Mai Nguyen Thanh Nhan"/>
+		<echo message="		Le Nguyen Hoai Nam"/>
+		<echo message="Mon Hoc quan li Cau hinh"/>
+		<echo message="Thoi gian built : ${datetime::now()}" />
+		
+		<echo message="Built tren may: ${environment::get-machine-name()}" />
+		<echo message="he dieu hanh : ${operating-system::to-string(environment::get-operating-system())}" />
+		<echo message="UserName : ${environment::get-user-name()}" />
+		<echo message="Cong cu Built :NAnt for .Net" />
+		
+		
+		
+	</target>
+	
+     	<target name="Xoa" description="Xoa thu muc Release" depends="GioiThieu">
+        	<echo message="Xoa Cacc thu muc Realse" />
+		<delete dir="../Release" verbose="true"  />
+		
+    	</target>
+	   
+	
+	<target name="buildDTO" description="BuiltDTO chuong trinh" depends="Xoa">
+		<mkdir dir="..\Release"/>
+		<echo message="Bien dich DTO" />
+   		<csc target="library" output="..\Release\DTO.dll" debug="None">
+    			
+    			<sources>
+        			<include name="..\SourceCode\DTO\*.cs" />
+    			</sources>
+    			<references>
+        			<include name="System.dll" />
+            			<include name="System.Data.dll" />
+                		<include name="System.Drawing.dll" />
+                		<include name="System.Windows.Forms.dll" />
+                		<include name="System.Xml.dll" />
+				<include name="System.Deployment.dll" />
+		  	</references>
+
+		</csc>
+		<echo message="Hoan Thanh Bien dich DTO" />
+	</target>
+	
+
+
+
+	<target name="buildDAO" description="BuiltDAO chuong trinh" depends="buildDTO">
+		<echo message="Bien dich DAO" />
+		
+	
+   		<csc target="library" output="..\Release\DAO.dll" debug="None">
+    			
+    			<sources>
+        			<include name="..\SourceCode\DAO\*.cs" />
+    			</sources>
+    		
+			<references>
+        			<include name="..\Release\DTO.dll" />
+				<include name="System.dll" />
+                		<include name="System.Data.dll" />
+                		<include name="System.Drawing.dll" />
+                		<include name="System.Windows.Forms.dll" />
+                		<include name="System.Xml.dll" />
+				<include name="System.Deployment.dll" />
+	    		</references>
+
+		</csc>
+		<echo message="Hoan Thanh Bien dich DAO" />
+	</target>
+
+
+	<target name="buildBUS" description="BuiltBUS chuong trinh" depends="buildDAO">
+		<echo message="Bien dich BUS" />
+   		<csc target="library" output="..\Release\BUS.dll" debug="None">
+    			
+    			<sources>
+       			 	<include name="..\SourceCode\BUS\*.cs" />
+    			</sources>
+    			<references>
+        			<include name="..\Release\DTO.dll" />
+				<include name="..\Release\DAO.dll" />
+				<include name="System.dll" />
+              			<include name="System.Data.dll" />
+               			<include name="System.Drawing.dll" />
+                		<include name="System.Windows.Forms.dll" />
+                		<include name="System.Xml.dll" />
+				<include name="System.Deployment.dll" />
+    			</references>
+
+		</csc>
+		<echo message="Hoan Thanh Bien dich BUS" />
+	</target>
+
+	<target name="buildGUI" description="BuildGUI" depends="buildBUS">
+		<echo message="Bien dich GUI" />
+		<csc target="exe" output="..\Release\QuanLiThuVien.exe" debug="true">
+    			<sources>
+        			<include name="..\SourceCode\QuanLyThuVien\*.cs" />
+				
+    			</sources>
+    			<resources dynamicprefix="true" prefix="QuanLyThuVien">
+        			
+				<include name="..\SourceCode\QuanLyThuVien\*.resx" />
+				
+			</resources>
+    			<references>
+        			<include name="System.dll" />
+              			<include name="System.Data.dll" />
+                		<include name="System.Drawing.dll" />
+                		<include name="System.Windows.Forms.dll" />
+                		<include name="System.Xml.dll" />
+				<include name="..\Release\DTO.dll" />
+				<include name="..\Release\BUS.dll" />
+				<include name="System.Deployment.dll" />
+		
+    			</references>
+
+		</csc>
+		<echo message="Hoan Thanh Bien dich GUI" />
+	</target>
+	
+	<target name="Xoapdb" depends="buildGUI" >
+		<delete file="..\Release\QuanLiThuVien.pdb" />
+	</target>
+	
+	<target name="Database" depends="Xoapdb"  >
+		<copy   file="..\Database\Quanlythuvien.mdb"  tofile="Quanlythuvien.mdb"  />
+		<copy   file="..\Database\Quanlythuvien.mdb"  tofile="..\Release\Quanlythuvien.mdb"  />
+		
+    
+	</target>
+     	
+	<target name="run" depends="Database">
+        	<exec program="QuanLiThuVien.exe" basedir="..\Release"/>
+        	<delete file="Quanlythuvien.mdb" />
+		<zip zipfile="..\Release\GuiThanhVien.zip">
+    			<fileset basedir="..\Release">
+        			<include name="*" />
+    			</fileset>
+		</zip>
+		
+    	
+	</target>
+	
+	
+	<target   name="ThatBai">
+		<echo message="Cac Ban Bien Dich That Bai " />
+		<echo message="Mail thong bao den cac thanh vien " />
+		<mail 
+   			 from="0612276@student.hcmus.edu.vn" 
+   			 tolist="0612322@student.hcmus.edu.vn" 
+   			 cclist="0612318@student.hcmus.edu.vn,0612299@student.hcmus.edu.vn" 
+   			 subject="ket qua build" 
+			 message="Da build That Bai"
+   			 mailhost="mail.student.hcmus.edu.vn">
+    			
+    			
+		</mail> 
+	</target>
+     	
+	<target   name="ThanhCong">
+		<echo message="Cac Ban Bien Dich Thanh Cong " />
+		<echo message="Mail thong bao den cac thanh vien " />
+		<mail 
+   			 from="0612276@student.hcmus.edu.vn" 
+   			 tolist="0612322@student.hcmus.edu.vn" 
+   			 cclist="0612318@student.hcmus.edu.vn,0612299@student.hcmus.edu.vn" 
+   			 subject="Ket Qua Build" 
+			 message="Da build Thanh Cong"
+   			 mailhost="mail.student.hcmus.edu.vn">
+    			<attachments>
+     			     <include name="..\Release\GuiThanhVien.zip" />
+   			</attachments> 
+    			
+		</mail> 
+		<delete file="..\Release\GuiThanhVien.zip" />
+		
+	</target>
+
+   
+    
+</project>
