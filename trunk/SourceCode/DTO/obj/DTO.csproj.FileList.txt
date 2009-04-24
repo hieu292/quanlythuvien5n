@@ -1,0 +1,5 @@
+bin\Release\DTO.dll
+bin\Release\DTO.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\DTO.dll
+obj\Release\DTO.pdb

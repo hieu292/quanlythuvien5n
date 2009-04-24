@@ -9,6 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyThuVien</RootNamespace>
     <AssemblyName>QuanLyThuVien</AssemblyName>
+    <ApplicationIcon>Books-OPY.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,11 +43,23 @@
     <Compile Include="frmCapnhatLoaisachNgonngu.Designer.cs">
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanlyDocgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanlyDocgia.Designer.cs">
+      <DependentUpon>frmQuanlyDocgia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanlysach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanlysach.Designer.cs">
       <DependentUpon>frmQuanlysach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSuaDocgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSuaDocgia.Designer.cs">
+      <DependentUpon>frmThemSuaDocgia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemSuaSach.cs">
       <SubType>Form</SubType>
@@ -60,9 +73,17 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanlyDocgia.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQuanlyDocgia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanlysach.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmQuanlysach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSuaDocgia.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmThemSuaDocgia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSuaSach.resx">
       <SubType>Designer</SubType>
@@ -99,52 +120,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mnQuanlySach.jpg" />
+    <EmbeddedResource Include="Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Help.jpg" />
+    <EmbeddedResource Include="edit.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mnLapphieumuon.jpg" />
+    <EmbeddedResource Include="add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mnNhansach.jpg" />
+    <EmbeddedResource Include="delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mnPhieumuon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mnQuanly.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mnQuanlyDocgia.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mnQuanlyphieumuon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Logo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="hinhnen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Search.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="edit.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Books-OPY.ico" />
+    <EmbeddedResource Include="Books-OPY.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

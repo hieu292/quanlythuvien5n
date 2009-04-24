@@ -88,65 +88,9 @@ namespace QuanLyThuVien.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap hinhnen {
+        internal static System.Drawing.Bitmap Search {
             get {
-                object obj = ResourceManager.GetObject("hinhnen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnLapphieumuon {
-            get {
-                object obj = ResourceManager.GetObject("mnLapphieumuon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnNhansach {
-            get {
-                object obj = ResourceManager.GetObject("mnNhansach", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnPhieumuon {
-            get {
-                object obj = ResourceManager.GetObject("mnPhieumuon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnQuanly {
-            get {
-                object obj = ResourceManager.GetObject("mnQuanly", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnQuanlyDocgia {
-            get {
-                object obj = ResourceManager.GetObject("mnQuanlyDocgia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnQuanlyphieumuon {
-            get {
-                object obj = ResourceManager.GetObject("mnQuanlyphieumuon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mnQuanlySach {
-            get {
-                object obj = ResourceManager.GetObject("mnQuanlySach", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Search1 {
-            get {
-                object obj = ResourceManager.GetObject("Search1", resourceCulture);
+                object obj = ResourceManager.GetObject("Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

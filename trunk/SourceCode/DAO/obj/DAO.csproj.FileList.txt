@@ -1,0 +1,7 @@
+bin\Release\DAO.dll
+bin\Release\DAO.pdb
+bin\Release\DTO.dll
+bin\Release\DTO.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\DAO.dll
+obj\Release\DAO.pdb
