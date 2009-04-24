@@ -43,6 +43,18 @@
     <Compile Include="frmCapnhatLoaisachNgonngu.Designer.cs">
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLapPhieuMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapPhieuMuonSach.Designer.cs">
+      <DependentUpon>frmLapPhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanlydanhsachphieumuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanlydanhsachphieumuon.Designer.cs">
+      <DependentUpon>frmQuanlydanhsachphieumuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanlyDocgia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,14 @@
     <EmbeddedResource Include="frmCapnhatLoaisachNgonngu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmCapnhatLoaisachNgonngu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLapPhieuMuonSach.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLapPhieuMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanlydanhsachphieumuon.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQuanlydanhsachphieumuon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanlyDocgia.resx">
       <SubType>Designer</SubType>
