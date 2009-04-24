@@ -1,0 +1,9 @@
+bin\Release\BUS.dll
+bin\Release\BUS.pdb
+bin\Release\DAO.dll
+bin\Release\DTO.dll
+bin\Release\DTO.pdb
+bin\Release\DAO.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\BUS.dll
+obj\Release\BUS.pdb
