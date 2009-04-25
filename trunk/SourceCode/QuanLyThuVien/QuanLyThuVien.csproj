@@ -9,8 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyThuVien</RootNamespace>
     <AssemblyName>QuanLyThuVien</AssemblyName>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Books-OPY.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -171,6 +170,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Books-OPY.ico" />
     <Content Include="Quanlythuvien.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
