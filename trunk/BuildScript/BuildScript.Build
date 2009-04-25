@@ -102,9 +102,9 @@
 		<echo message="Hoan Thanh Bien dich BUS" />
 	</target>
 
-	<target name="buildGUI" description="BuildGUI" depends="buildBUS">
+	<target name="buildGUI" description="BuildGUI" depends="buildBUS" >
 		<echo message="Bien dich GUI" />
-		<csc target="exe" output="..\Release\QuanLiThuVien.exe" debug="true">
+		<csc target="exe" output="..\Release\QuanLiThuVien.exe" debug="True" win32icon="..\SourceCode\QuanLyThuVien\Books-OPY.ico">
     			<sources>
         			<include name="..\SourceCode\QuanLyThuVien\*.cs" />
 				
