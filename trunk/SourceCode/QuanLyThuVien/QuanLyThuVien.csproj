@@ -9,7 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyThuVien</RootNamespace>
     <AssemblyName>QuanLyThuVien</AssemblyName>
-    <ApplicationIcon>Books-OPY.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -104,7 +104,7 @@
 
 	<target name="buildGUI" description="BuildGUI" depends="buildBUS" >
 		<echo message="Bien dich GUI" />
-		<csc target="exe" output="..\Release\QuanLiThuVien.exe" debug="True" win32icon="..\SourceCode\QuanLyThuVien\Books-OPY.ico">
+		<csc target="exe" output="..\Release\QuanLiThuVien.exe" debug="True">
     			<sources>
         			<include name="..\SourceCode\QuanLyThuVien\*.cs" />
 				
