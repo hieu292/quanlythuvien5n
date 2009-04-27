@@ -113,6 +113,7 @@ namespace DAO
         public static DataSet Search(DocGiaDto docgia)
         {
             DataSet docGia = new DataSet();
+            DataTable dt = new DataTable();
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
@@ -143,7 +144,23 @@ namespace DAO
             }
             else
             {
-                strSQL += " NgaySinh = #" + docgia.NgaySinh.ToShortDateString() + "#";
+                strSQL += " NgaySinh = ? ";
+                OleDbCommand cmd = new OleDbCommand(strSQL, cn);
+                cmd.Parameters.Add("@ngaysinh", OleDbType.Date);
+                cmd.Parameters["@ngaysinh"].Value = docgia.NgaySinh;
+                OleDbDataReader dr;
+                dr = cmd.ExecuteReader();
+                dt.Columns.Add("MDocgia", System.Type.GetType("System.Int32"));
+                dt.Columns.Add("Hoten", System.Type.GetType("System.String"));
+                while (dr.Read())
+                {
+                    DataRow row = dt.NewRow();
+                    row[0] = (int)dr[0];
+                    row[1] = dr[1].ToString();
+                    dt.Rows.Add(row);
+                }
+                docGia.Tables.Add(dt);
+                return docGia;
             }
             OleDbDataAdapter adp = new OleDbDataAdapter(strSQL, cn);
             adp.Fill(docGia);

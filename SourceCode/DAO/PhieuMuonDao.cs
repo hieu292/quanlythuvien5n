@@ -75,13 +75,32 @@ namespace DAO
         public static DataSet SearchDay(DateTime first, DateTime last)
         {
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
-            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where NgayMuon >= #" + first.ToShortDateString() + "# and NgayMuon <= #" + last.ToShortDateString() + "# and d.MDocGia = p.MDocGia";
-            OleDbDataAdapter da;
-            da = new OleDbDataAdapter(strSQL, cn);
-            da.Fill(ds);
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where NgayMuon >= ? and NgayMuon <= ? and d.MDocGia = p.MDocGia";
+            OleDbCommand cmd = new OleDbCommand(strSQL, cn);
+            cmd.Parameters.Add("@first", OleDbType.Date);
+            cmd.Parameters.Add("@last", OleDbType.Date);
+            cmd.Parameters["@first"].Value = first;
+            cmd.Parameters["@last"].Value = last;
+            OleDbDataReader dr;
+            dr = cmd.ExecuteReader();
+            dt.Columns.Add("MPhieu", System.Type.GetType("System.Int32"));
+            dt.Columns.Add("Hoten", System.Type.GetType("System.String"));
+            dt.Columns.Add("NgayMuon", System.Type.GetType("System.DateTime"));
+            dt.Columns.Add("SoNgayMuon", System.Type.GetType("System.Int32"));
+            while (dr.Read())
+            {
+                DataRow row = dt.NewRow();
+                row[0] = (int)dr[0];
+                row[1] = dr[1].ToString();
+                row[2] = (DateTime)dr[2];
+                row[3] = (int)dr[3];
+                dt.Rows.Add(row);
+            }
+            ds.Tables.Add(dt);
             cn.Close();
             return ds;
         }
