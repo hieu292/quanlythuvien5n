@@ -172,7 +172,7 @@ namespace DAO
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
-            strSQL = "Select s.MSach, s.TenSach, s.TacGia From PhieuMuon p, ChiTietPhieuMuon c, Sach s where p.MDocGia = " + maDocGia.ToString() + " and c.MPhieu = p.MPhieu and c.MSach = s.MSach and s.TrangThai = false";
+            strSQL = "Select s.MSach, s.TenSach, s.TacGia From PhieuMuon p, ChiTietPhieuMuon c, Sach s where p.MDocGia = " + maDocGia.ToString() + " and c.MPhieu = p.MPhieu and c.MSach = s.MSach and s.TrangThai = false and p.TrangThai = false";
             OleDbDataAdapter adp = new OleDbDataAdapter(strSQL, cn);
             adp.Fill(docGia);
             return docGia;

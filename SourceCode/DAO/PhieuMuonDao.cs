@@ -79,7 +79,7 @@ namespace DAO
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
-            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where NgayMuon >= ? and NgayMuon <= ? and d.MDocGia = p.MDocGia";
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon, p.TrangThai  From PhieuMuon p, Docgia d Where NgayMuon >= ? and NgayMuon <= ? and d.MDocGia = p.MDocGia";
             OleDbCommand cmd = new OleDbCommand(strSQL, cn);
             cmd.Parameters.Add("@first", OleDbType.Date);
             cmd.Parameters.Add("@last", OleDbType.Date);
@@ -111,7 +111,7 @@ namespace DAO
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
-            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where SoNgayMuon = " + soNgay.ToString() + " and d.MDocGia = p.MDocGia";
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon, p.TrangThai  From PhieuMuon p, Docgia d Where SoNgayMuon = " + soNgay.ToString() + " and d.MDocGia = p.MDocGia";
             OleDbDataAdapter da;
             da = new OleDbDataAdapter(strSQL, cn);
             da.Fill(ds);
@@ -125,7 +125,21 @@ namespace DAO
             OleDbConnection cn;
             cn = DataProvider.ConnectionData();
             string strSQL;
-            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon  From PhieuMuon p, Docgia d Where d.MDocGia = p.MDocGia";
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon, p.TrangThai, p.TrangThai  From PhieuMuon p, Docgia d Where d.MDocGia = p.MDocGia and p.TrangThai = false";
+            OleDbDataAdapter da;
+            da = new OleDbDataAdapter(strSQL, cn);
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public static DataSet SearchAll()
+        {
+            DataSet ds = new DataSet();
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "Select p.MPhieu, d.HoTen, p.NgayMuon, p.SoNgayMuon, p.TrangThai  From PhieuMuon p, Docgia d Where d.MDocGia = p.MDocGia";
             OleDbDataAdapter da;
             da = new OleDbDataAdapter(strSQL, cn);
             da.Fill(ds);
@@ -185,6 +199,22 @@ namespace DAO
             cmd.Parameters["@NgayMuon"].Value = pm.NgayMuon;
             cmd.Parameters["@SoNgayMuon"].Value = pm.SoNgayMuon;
             cmd.Parameters["@MPhieu"].Value = pm.MPhieu;
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void UpdateTrangThai(int mPhieu, bool trangthai)
+        {
+            OleDbConnection cn;
+            cn = DataProvider.ConnectionData();
+            string strSQL;
+            strSQL = "Update PhieuMuon Set TrangThai=? Where MPhieu = ?";
+            OleDbCommand cmd = new OleDbCommand(strSQL, cn);
+            cmd.Parameters.Add("@TrangThai", OleDbType.Boolean);
+            cmd.Parameters.Add("@MPhieu", OleDbType.Integer);
+
+            cmd.Parameters["@TrangThai"].Value = trangthai;
+            cmd.Parameters["@MPhieu"].Value = mPhieu;
             cmd.ExecuteNonQuery();
             cn.Close();
         }
