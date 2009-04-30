@@ -11,6 +11,7 @@ namespace DTO
         private int mDocGia;
         private DateTime ngayMuon;
         private int soNgayMuon;
+        private bool trangThai;
         #endregion
 
         #region Properties
@@ -36,6 +37,11 @@ namespace DTO
         {
             get { return soNgayMuon; }
             set { soNgayMuon = value; }
+        }
+        public bool TrangThai
+        {
+            get { return trangThai; }
+            set { trangThai = value; }
         }
         #endregion
 

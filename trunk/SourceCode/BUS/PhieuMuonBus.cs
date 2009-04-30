@@ -29,6 +29,11 @@ namespace BUS
             return PhieuMuonDao.SearchDay(first, last);
         }
 
+        public static DataSet SearchAll()
+        {
+            return PhieuMuonDao.SearchAll();
+        }
+
         public static DataSet Searchnumday(int songay)
         {
             return PhieuMuonDao.Searchnumday(songay);
@@ -48,6 +53,11 @@ namespace BUS
         public static void Update(PhieuMuonDto pm)
         {
             PhieuMuonDao.Update(pm);
+        }
+        
+        public static void UpdateTrangThai(int mPhieu, bool trangthai)
+        {
+            PhieuMuonDao.UpdateTrangThai(mPhieu, trangthai);
         }
     }
 }
